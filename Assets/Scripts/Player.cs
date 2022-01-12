@@ -20,16 +20,16 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            audioSource.Play();
+            audioSource?.Play(); // if audio source is null, then ignore the rest of it (after the ?) 
             GetComponent<Renderer>().material.color = Color.blue; 
             //transform.rotation *= Quaternion.Euler(5, 0, 0);
         }
 
-        GameObject go = GameObject.Find("Cube"); 
+/*        GameObject go = GameObject.Find("Cube"); 
         if (go)
         {
             go.GetComponent<Renderer>().material.color = Color.magenta; 
-        }
+        }*/
 
     }
 }
