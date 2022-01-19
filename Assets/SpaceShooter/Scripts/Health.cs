@@ -30,4 +30,9 @@ public class Health : MonoBehaviour
             }
         }
     }
+
+    public void Damage(float damage)
+    {
+        Update(damage); 
+    }
 }

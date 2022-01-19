@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6611b8bdeceeaec4aa86dd3dbe213322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 1}
   speed: 50
-  space: 0
+  space: 1
 --- !u!1001 &4454719097122291621
 PrefabInstance:
   m_ObjectHideFlags: 0
