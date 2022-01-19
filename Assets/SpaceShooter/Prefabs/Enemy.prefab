@@ -30,7 +30,19 @@ MonoBehaviour:
   deathPrefab: {fileID: 4347288890959076551, guid: 45e322b61f3e4f6489e771d30e494f8b, type: 3}
   destroyOnDeath: 1
   maxHealth: 20
-  health: 0
+--- !u!65 &9064366503210555529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946295514599811864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 1, z: 21}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3946295514599920956
 PrefabInstance:
   m_ObjectHideFlags: 0

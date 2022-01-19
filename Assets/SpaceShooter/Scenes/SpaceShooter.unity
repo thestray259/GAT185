@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2650891684205395648, guid: 45b8b71db83ed9c478f0d48218c6ee91, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3946295514599811864, guid: 45b8b71db83ed9c478f0d48218c6ee91, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -569,7 +573,6 @@ MonoBehaviour:
   deathPrefab: {fileID: 0}
   destroyOnDeath: 1
   maxHealth: 100
-  health: 50
 --- !u!1001 &3946295513882269177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,15 +704,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2117078659368074875, guid: 329ee5d057f95a14ab9067f533c849bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9856513
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2117078659368074875, guid: 329ee5d057f95a14ab9067f533c849bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1425023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2117078659368074875, guid: 329ee5d057f95a14ab9067f533c849bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.975861
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2117078659368074875, guid: 329ee5d057f95a14ab9067f533c849bd, type: 3}
       propertyPath: m_LocalRotation.w
