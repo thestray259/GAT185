@@ -14,6 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 1}
   speed: 30
+  space: 1
+--- !u!114 &5346953261229734794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946295514599811864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b915bb116b49db04fa55dd0001166490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 4347288890959076551, guid: 45e322b61f3e4f6489e771d30e494f8b, type: 3}
+  destroyOnDeath: 1
+  maxHealth: 20
+  health: 0
 --- !u!1001 &3946295514599920956
 PrefabInstance:
   m_ObjectHideFlags: 0
