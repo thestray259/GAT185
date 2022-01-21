@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2379606343277114825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4456093795544392177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff294fdc7f2aa144b8ec024a68802c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 15
 --- !u!114 &7271257439947982562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,9 +96,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154668921408970580, guid: 4d5c26a5782d9294eaed6fbde168b364, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154668921408970580, guid: 4d5c26a5782d9294eaed6fbde168b364, type: 3}
       propertyPath: deathPrefab
       value: 
-      objectReference: {fileID: 4347288890959076551, guid: 45e322b61f3e4f6489e771d30e494f8b, type: 3}
+      objectReference: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
     m_RemovedComponents:
     - {fileID: 114946913247476384, guid: 4d5c26a5782d9294eaed6fbde168b364, type: 3}
     - {fileID: 114991021336134822, guid: 4d5c26a5782d9294eaed6fbde168b364, type: 3}

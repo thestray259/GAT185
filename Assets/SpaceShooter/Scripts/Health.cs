@@ -20,6 +20,8 @@ public class Health : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            GameManager.Instance.Score += 100; 
+
             if (deathPrefab != null)
             {
                 Instantiate(deathPrefab, transform.position, transform.rotation);
