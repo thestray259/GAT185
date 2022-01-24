@@ -52499,6 +52499,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496846}
+  - component: {fileID: 3422162144546455230}
+  - component: {fileID: 1898599432868910667}
   - component: {fileID: 4955222614475792309}
   - component: {fileID: 8395921914461594897}
   m_Layer: 0
@@ -52523,6 +52525,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3422162144546455230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6768dac353630ac4a9fa9c0a0502d32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  spawnTransform: {fileID: 0}
+  fireRate: 0
+--- !u!114 &1898599432868910667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3da6ceed94dc342906e3173397d1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceWeapon: {fileID: 0}
+  minFireTime: 0
+  maxFireTime: 0
+  points: 200
 --- !u!114 &4955222614475792309
 MonoBehaviour:
   m_ObjectHideFlags: 0
