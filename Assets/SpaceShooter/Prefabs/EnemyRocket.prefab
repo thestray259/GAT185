@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2117078659368074875}
   - component: {fileID: 1768993787221511997}
   - component: {fileID: 5505355408503319863}
+  - component: {fileID: 1578848890276324700}
   - component: {fileID: -5648311847888873691}
   - component: {fileID: 4940913364653832671}
   - component: {fileID: 8765047244517871406}
@@ -65,6 +66,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &1578848890276324700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8407011418580985740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b915bb116b49db04fa55dd0001166490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 4347288890959076551, guid: 45e322b61f3e4f6489e771d30e494f8b, type: 3}
+  destroyOnDeath: 1
+  maxHealth: 5
 --- !u!114 &-5648311847888873691
 MonoBehaviour:
   m_ObjectHideFlags: 0
