@@ -43,6 +43,66 @@ MonoBehaviour:
   deathPrefab: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
   destroyOnDeath: 1
   maxHealth: 20
+--- !u!1 &4296027018844372687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6575266903997396509}
+  m_Layer: 7
+  m_Name: WeaponSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6575266903997396509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4296027018844372687}
+  m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 6, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3946295514600145394}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
+--- !u!1 &6233859575242186637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2506171020704641121}
+  m_Layer: 7
+  m_Name: WeaponSpawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2506171020704641121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6233859575242186637}
+  m_LocalRotation: {x: -0, y: -0.2588186, z: -0, w: 0.965926}
+  m_LocalPosition: {x: -6, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3946295514600145394}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
 --- !u!1 &7956092082717028807
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +356,22 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 8407011418580985740, guid: 3cd26c7f537804e408db3e6cdfc2bb8c, type: 3}
+    - target: {fileID: 3422162144546455230, guid: 7111b43de008a9d4aade063a6b5c70ef, type: 3}
+      propertyPath: spawnTransforms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422162144546455230, guid: 7111b43de008a9d4aade063a6b5c70ef, type: 3}
+      propertyPath: spawnTransforms.Array.data[0]
+      value: 
+      objectReference: {fileID: 759510825273244993}
+    - target: {fileID: 3422162144546455230, guid: 7111b43de008a9d4aade063a6b5c70ef, type: 3}
+      propertyPath: spawnTransforms.Array.data[1]
+      value: 
+      objectReference: {fileID: 6575266903997396509}
+    - target: {fileID: 3422162144546455230, guid: 7111b43de008a9d4aade063a6b5c70ef, type: 3}
+      propertyPath: spawnTransforms.Array.data[2]
+      value: 
+      objectReference: {fileID: 2506171020704641121}
     - target: {fileID: 4955222614475792309, guid: 7111b43de008a9d4aade063a6b5c70ef, type: 3}
       propertyPath: timer
       value: 15

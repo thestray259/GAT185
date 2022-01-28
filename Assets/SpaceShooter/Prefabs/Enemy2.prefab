@@ -72,7 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8407011418580985740, guid: 3cd26c7f537804e408db3e6cdfc2bb8c, type: 3}
-  spawnTransform: {fileID: 818614149480598986}
+  spawnTransforms:
+  - {fileID: 818614149480598986}
   fireRate: 0
 --- !u!114 &1598137589
 MonoBehaviour:
