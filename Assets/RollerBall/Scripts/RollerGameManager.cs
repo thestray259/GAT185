@@ -44,7 +44,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
         set
         {
             score = value;
-            scoreUI.text = score.ToString();
+            scoreUI.text = score.ToString("D2");
         }
     }
 
