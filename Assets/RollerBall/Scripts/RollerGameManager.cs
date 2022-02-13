@@ -38,7 +38,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
     int lives = 0;
     State state = State.TITLE;
     float stateTimer;
-    float gameTime = 0;
+    public float gameTime = 0;
 
     public int Score
     {
@@ -77,15 +77,16 @@ public class RollerGameManager : Singleton<RollerGameManager>
         switch (state)
         {
             case State.TITLE:
+                var player = FindObjectOfType<RollerPlayer>(); 
+                if (player != null) DestroyPlayer();
+                GameTime = 00; 
                 break;
             case State.PLAYER_START:
-                DestroyAllEnemies();
                 Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
                 mainCamera.SetActive(false); 
                 startGameEvent?.Invoke();
                 GameTime = 60; 
 
-                //boxSpawner.timeModifier = 1; // resets difficulty 
                 state = State.GAME;
                 break;
             case State.GAME:
@@ -95,8 +96,6 @@ public class RollerGameManager : Singleton<RollerGameManager>
                     GameTime = 0;
                     state = State.GAME_OVER;
                     stateTimer = 5; 
-                    //boxSpawner.timeModifier -= 0.1f;
-                    //boxSpawner.timeModifier = Mathf.Max(0.2f, boxSpawner.timeModifier);
                 }
                 break;
             case State.PLAYER_DEAD:
@@ -107,6 +106,9 @@ public class RollerGameManager : Singleton<RollerGameManager>
                 mainCamera.SetActive(true);
                 break;
             case State.GAME_OVER:
+                mainCamera.SetActive(true);
+                gameOverScreen.SetActive(true);
+
                 if (stateTimer <= 0)
                 {
                     state = State.TITLE;
@@ -165,5 +167,12 @@ public class RollerGameManager : Singleton<RollerGameManager>
         {
             Destroy(spaceEnemy.gameObject);
         }*/
+    }
+
+    private void DestroyPlayer()
+    {
+        GameObject.FindGameObjectWithTag("Player");
+        var player = FindObjectOfType<RollerPlayer>();
+        Destroy(player.gameObject); 
     }
 }
