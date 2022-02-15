@@ -9,9 +9,11 @@ public class RollerPlayer : MonoBehaviour, IDestructable
     [SerializeField] float jumpForce = 5;
     [SerializeField] ForceMode forceMode;
     [SerializeField] Transform viewTransform; 
+    [SerializeField] AudioSource audioSource; 
 
     Rigidbody rb;
-    Vector3 force = Vector3.zero; 
+    Vector3 force = Vector3.zero;
+
 
     void Start()
     {
@@ -45,11 +47,11 @@ public class RollerPlayer : MonoBehaviour, IDestructable
     private void FixedUpdate()
     {
         rb.AddForce(force, forceMode); 
-        
     }
 
     public void Destroyed()
     {
+        audioSource.Play(); 
         RollerGameManager.Instance.OnPlayerDead(); 
     }
 }

@@ -12,16 +12,17 @@ public class RollerGameManager : Singleton<RollerGameManager>
         PLAYER_START,
         GAME,
         PLAYER_DEAD,
-        GAME_OVER
+        GAME_OVER, 
+        GAME_WIN
     }
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform playerSpawn;
-    //[SerializeField] BoxSpawner boxSpawner;
     [SerializeField] GameObject mainCamera; 
 
     [SerializeField] GameObject titleScreen;
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject gameWinScreen;
     [SerializeField] TMP_Text scoreUI;
     [SerializeField] TMP_Text livesUI;
     [SerializeField] TMP_Text timeUI;
@@ -30,7 +31,6 @@ public class RollerGameManager : Singleton<RollerGameManager>
     public float playerHealth { set { healthBarUI.value = value; } }
 
     public delegate void GameEvent();
-
     public event GameEvent startGameEvent;
     public event GameEvent stopGameEvent;
 
@@ -97,7 +97,13 @@ public class RollerGameManager : Singleton<RollerGameManager>
                     state = State.GAME_OVER;
                     stateTimer = 5; 
                 }
-                break;
+
+                if (gameTime > 0 && score >= 1000)
+                {
+                    state = State.GAME_WIN;
+                    stateTimer = 5; 
+                }
+                    break;
             case State.PLAYER_DEAD:
                 if (stateTimer <= 0)
                 {
@@ -116,6 +122,17 @@ public class RollerGameManager : Singleton<RollerGameManager>
                     titleScreen.SetActive(true);
                 }
                 break;
+            case State.GAME_WIN:
+                mainCamera.SetActive(true);
+                gameWinScreen.SetActive(true);
+
+                if (stateTimer <= 0)
+                {
+                    state = State.TITLE;
+                    gameWinScreen.SetActive(false);
+                    titleScreen.SetActive(true);
+                }
+                break; 
             default:
                 break;
         }

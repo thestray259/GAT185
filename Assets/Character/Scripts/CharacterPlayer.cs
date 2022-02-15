@@ -33,7 +33,7 @@ public class CharacterPlayer : MonoBehaviour
             transform.forward = controller.velocity; 
         }
 
-        if (controller.isGrounded && Input.GetButtonDown("Jump"))
+        if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             velocity.y += jumpForce; 
         }
