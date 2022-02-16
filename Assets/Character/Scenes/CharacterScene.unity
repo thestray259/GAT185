@@ -133,6 +133,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 99e9cb7a9e0887642a0d8cf4cd42193f, type: 3}
   m_PrefabInstance: {fileID: 352736645}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &70095644 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99e9cb7a9e0887642a0d8cf4cd42193f, type: 3}
+  m_PrefabInstance: {fileID: 352736645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &70095645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,8 +152,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 70095646}
   animator: {fileID: 70095643}
+  view: {fileID: 442995358}
   speed: 3
-  jumpForce: 10
+  jumpForce: 6
+  turnRate: 10
 --- !u!143 &70095646
 CharacterController:
   m_ObjectHideFlags: 0
@@ -165,8 +172,8 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &352736645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -243,6 +250,7 @@ GameObject:
   - component: {fileID: 442995358}
   - component: {fileID: 442995357}
   - component: {fileID: 442995356}
+  - component: {fileID: 442995359}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -315,6 +323,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442995359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442995355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405f5cea9c7821f40a8c44efee3a64fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 70095644}
+  distance: 5
+  pitch: 45
+  sensitivity: 1
+  rate: 4
 --- !u!1 &799304011
 GameObject:
   m_ObjectHideFlags: 0
