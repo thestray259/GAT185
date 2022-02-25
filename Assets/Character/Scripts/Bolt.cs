@@ -23,7 +23,7 @@ public class Bolt : MonoBehaviour
 
         for (int i = 1; i < segments; i++)
         {
-            positions[i] = start.position + direction.normalized * length; //< normalized direction* length * ???>;
+            positions[i] = start.position + direction.normalized * (length * i); //< normalized direction* length * ???>;
             positions[i] = positions[i] + Random.insideUnitSphere * radius; //< Random inside unit sphere* radius>;
         }
 
