@@ -31,6 +31,14 @@ public class Inventory : MonoBehaviour
         activeItem?.Activate(); 
     }
 
+    public void StartItem()
+    {
+        if (activeItem is Weapon weapon)
+        {
+            weapon.Fire();
+        }
+    }
+
     public void Fire()
     {
         if (activeItem.TryGetComponent<Weapon>(out Weapon weapon))

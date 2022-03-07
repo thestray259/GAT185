@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class LessonPlayer : MonoBehaviour
 {
     [Range(0, 10)][Tooltip("speed of the player")] public float speed = 5;
     [SerializeField] AudioSource audioSource; 

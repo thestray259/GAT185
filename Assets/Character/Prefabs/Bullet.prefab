@@ -51,6 +51,7 @@ MonoBehaviour:
   rb: {fileID: 3673316851017243045}
   speed: 10
   forceMode: 2
+  destroyPrefab: {fileID: 1906021416640072, guid: f72b1f87653069d458bfd1263ffa4bb9, type: 3}
 --- !u!33 &3673316851017243048
 MeshFilter:
   m_ObjectHideFlags: 0
