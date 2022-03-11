@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Character/Scenes/CharacterScene.unity
     guid: 1eb8a19166db8444190a6ef721d6d619
+  - enabled: 1
+    path: Assets/Character/Scenes/GameBase.unity
+    guid: b86722906cc9f1147bc83651e040e1b1
+  - enabled: 0
+    path: Assets/SpaceShooter/Scenes/SpaceShooter.unity
+    guid: 497fa70d78ed59a46824f7c0bb964ab5
   m_configObjects: {}

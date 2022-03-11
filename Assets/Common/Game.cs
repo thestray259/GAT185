@@ -13,50 +13,17 @@ public class Game : Singleton<Game>
 		PLAYER_START,
 		GAME,
 		PLAYER_DEAD,
-		GAME_OVER
+		GAME_OVER,
+		GAME_WIN
 	}
 
-	[SerializeField] TMP_Text scoreUI;
-	[SerializeField] TMP_Text livesUI;
-	[SerializeField] TMP_Text timeUI;
-	[SerializeField] Slider healthUI;
-	[SerializeField] ScreenFade screenFade; 
-	[SerializeField] AudioClip musicClip;
+	[SerializeField] ScreenFade screenFade;
+	[SerializeField] SceneLoader sceneLoader;
+	[SerializeField] GameObject gameOverScreen;
 
-	public float health { set { healthUI.value = value; } }
+	public GameData gameData;
 
-	int score = 0;
-	public int Score
-	{
-		get { return score; }
-		set
-		{
-			score = value;
-			scoreUI.text = score.ToString("D2");
-		}
-	}
-
-	int lives = 0;
-	public int Lives
-	{
-		get { return lives; }
-		set
-		{
-			lives = value;
-			livesUI.text = lives.ToString();
-		}
-	}
-
-	float gameTime = 0;
-	public float GameTime
-	{
-		get { return gameTime; }
-		set
-		{
-			gameTime = value;
-			timeUI.text = "<mspace=mspace=36>" + gameTime.ToString("0.0") + "</mspace>";
-		}
-	}
+	float stateTimer = 3; 
 
 	State state = State.TITLE;
 	int highScore;
@@ -67,14 +34,30 @@ public class Game : Singleton<Game>
 		highScore++;
 		PlayerPrefs.SetInt("highscore", highScore);
 
-		PlayerPrefs.DeleteAll();
-		PlayerPrefs.DeleteKey("highscore");
+		//PlayerPrefs.DeleteAll();
+		//PlayerPrefs.DeleteKey("highscore");
 
-		AudioManager.Instance.PlayMusic(musicClip);
+		gameData.intData["CheeseLeft"] = 3; 
+		gameData.intData["Level"] = 1; 
+		gameData.intData["Lives"] = 1; 
+
+		InitScene();
+		SceneManager.activeSceneChanged += OnSceneWasLoaded; 
+	}
+
+	void InitScene()
+    {
+		SceneDescriptor sceneDescriptor = FindObjectOfType<SceneDescriptor>();
+		if (sceneDescriptor != null)
+        {
+			Instantiate(sceneDescriptor.player, sceneDescriptor.playerSpawn.position, sceneDescriptor.playerSpawn.rotation);
+        }
 	}
 
 	private void Update()
 	{
+		stateTimer -= Time.deltaTime;
+
 		switch (state)
 		{
 			case State.TITLE:
@@ -87,6 +70,12 @@ public class Game : Singleton<Game>
 				break;
 			case State.GAME_OVER:
 				break;
+			case State.GAME_WIN:
+/*				if (stateTimer <= 0)
+                {
+					OnLoadScene("MainMenu");
+				}*/
+				break;
 			default:
 				break;
 		}
@@ -94,13 +83,41 @@ public class Game : Singleton<Game>
 
 	public void OnLoadScene(string sceneName)
     {
-		StartCoroutine(LoadScene(sceneName));
+		gameOverScreen.SetActive(false);
+		sceneLoader.Load(sceneName); 
 	}
 
-	IEnumerator LoadScene(string sceneName)
+	public void OnPlayerDead()
     {
-		screenFade.FadeOut();
-		yield return new WaitUntil(() => screenFade.isDone);
-		SceneManager.LoadScene(sceneName); 
+		gameData.intData["Lives"]--; 
+
+		if (gameData.intData["Lives"] == 0)
+        {
+			OnLoadScene("MainMenu"); 
+        }
+		else
+        {
+			OnLoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+	public void OnCheeseFound()
+	{
+		gameData.intData["CheeseLeft"]--;
+
+		if (gameData.intData["CheeseLeft"] == 0)
+		{
+			gameOverScreen.SetActive(true);
+			stateTimer -= Time.deltaTime; 
+			if (stateTimer >= 0)
+            {
+				OnLoadScene("MainMenu");
+			}
+		}
+	}
+
+	void OnSceneWasLoaded(Scene current, Scene next)
+    {
+		InitScene(); 
     }
 }
